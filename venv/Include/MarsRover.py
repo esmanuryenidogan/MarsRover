@@ -23,7 +23,7 @@ class Rover:
         }
         self.direction = switcher.get(moveDirection, "")
 
-    def Move(self,moveX,moveY,moveDirection):
+    def Move(self,moveDirection):
         if(moveDirection == "N"):
             self.locY += 1
         if(moveDirection == "S"):
@@ -41,7 +41,7 @@ class Rover:
             if(step == "R"):
                 self.TurnRight(self.direction)
             else:
-                self.Move(self.locX,self.locY,self.direction)
+                self.Move(self.direction)
         return "{} {} {}".format(self.locX, self.locY, self.direction)
 
 rover = Rover(1,2,"N","LMLMLMLMM")#Gezginin iniş yaptığı konum (1,2) ve yön (N) + gezgin için belirlenen ilerleme kodu (LMLMLMLMM)
